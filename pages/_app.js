@@ -14,7 +14,7 @@ function MyApp({ Component, pageProps }) {
         <Flex p='3' borderBottom='1px' borderBottomColor='gray.300'>
           <Avatar w='30px' h='30px' mr='5' src='https://bit.ly/broken-link' />
           <Text flexGrow='1' fontSize='lg' fontWeight='900'>
-            Home
+            {Component.title}
           </Text>
         </Flex>
         <Box flexGrow='1' overflow='scroll'>

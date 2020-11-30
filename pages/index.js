@@ -1,7 +1,7 @@
 import { Box } from '@chakra-ui/react'
 import data from '../data'
 
-export default function Home() {
+function Home() {
   return (
     <>
       {data.map((i) => (
@@ -12,3 +12,6 @@ export default function Home() {
     </>
   )
 }
+
+Home.title = 'Home'
+export default Home
