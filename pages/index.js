@@ -1,4 +1,4 @@
-import { Avatar, Box, chakra, Flex } from '@chakra-ui/react'
+import { Avatar, Box, chakra, Flex, Text } from '@chakra-ui/react'
 import { createTweet } from '../data'
 
 function Home() {
@@ -11,7 +11,7 @@ function Home() {
           </Box>
           <Flex flexDirection='column'>
             <Box>
-              <chakra.span fontSize='sm'>
+              <chakra.span fontSize='xs'>
                 <Flex>
                   <chakra.span isTruncated noOfLines='1' mr='1'>
                     <chakra.span fontWeight='bold'>{i.name}</chakra.span>{' '}
@@ -23,7 +23,9 @@ function Home() {
                 </Flex>
               </chakra.span>
             </Box>
-            <Box>{i.tweet}</Box>
+            <Box>
+              <Text fontSize='sm'>{i.tweet}</Text>
+            </Box>
           </Flex>
         </Flex>
       ))}
