@@ -1,11 +1,11 @@
-import faker from 'faker'
+const faker = require('faker')
 
-const createTweet = (total) => {
-  let array = []
-  for (let i = 0; i < total; i++) {
+module.exports = () => {
+  let tweets = []
+  for (let i = 0; i < 10; i++) {
     const firstName = faker.name.firstName()
     const lastName = faker.name.lastName()
-    array.push({
+    tweets.push({
       id: faker.random.uuid(),
       tweet: faker.lorem.sentence(),
       username: faker.internet.userName(firstName, lastName),
@@ -15,7 +15,5 @@ const createTweet = (total) => {
     })
   }
 
-  return array
+  return { tweets }
 }
-
-export { createTweet }

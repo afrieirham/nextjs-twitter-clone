@@ -1,10 +1,17 @@
 import { Avatar, Box, chakra, Flex, Text } from '@chakra-ui/react'
 import { createTweet } from '../data'
+import useSWR from 'swr'
+import axios from 'axios'
+
+axios.defaults.baseURL = 'http://localhost:5000'
 
 function Home() {
+  const fetcher = (url) => axios.get(url).then((res) => res.data)
+  const { data: tweets, error } = useSWR('/tweets', fetcher)
+
   return (
     <>
-      {createTweet(90).map((i) => (
+      {tweets.map((i) => (
         <Flex key={i.id} p='5' borderBottom='1px' borderBottomColor='gray.100'>
           <Box mr='5'>
             <Avatar src={i.avater} />
